@@ -1,0 +1,22 @@
+html, body{
+	margin:0px;	
+	padding:0px;
+	border:0px;
+    font-family:arial,sans-serif;
+	height:100%;
+}
+
+.menuitem{
+	display: inline-block;
+	background-color:#728ca6;
+	width:10%;
+	height:35px;
+	margin:5px;
+}
+
+#menu {
+	margin: auto;
+	background-color:#4a6b8a;
+	top:0px;	
+	padding:0px;
+}

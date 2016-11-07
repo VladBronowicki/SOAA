@@ -1,0 +1,7 @@
+.menuitem{
+	display: inline-block;
+	background-color:#ff0000;
+	width:10%;
+	height:35px;
+	margin-top:5px;
+}
