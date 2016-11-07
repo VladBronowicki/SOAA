@@ -4,19 +4,27 @@ html, body{
 	border:0px;
     font-family:arial,sans-serif;
 	height:100%;
+	min-width:966px;
 }
+
 
 .menuitem{
 	display: inline-block;
 	background-color:#728ca6;
-	width:10%;
-	height:35px;
-	margin:5px;
+	width:128px;
+	height:48px;
+
 }
 
 #menu {
 	margin: auto;
 	background-color:#4a6b8a;
-	top:0px;	
-	padding:0px;
+	height:48px;
+}
+
+#header {
+	
+	background-color:#041e37;
+	height:255px;
+	margin:auto;
 }
