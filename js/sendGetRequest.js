@@ -17,3 +17,25 @@ function sendGet( ev ){
 	}
 	menuform.submit();
 }
+
+function setFooterPosition(  ){
+	/*
+	var height = document.querySelector("#maindiv").offsetHeight - document.querySelector("#footer").offsetHeight;
+	console.log(height);
+	document.querySelector("#footer").style.top = height+"px";
+	var contentheight = 
+		height-document.querySelector("#menu").offsetHeight -
+		document.querySelector("#header").offsetHeight - 
+		document.querySelector("#footer").offsetHeight;
+	document.querySelector("#contentbody").style.height = contentheight+"px";
+	console.log(contentheight);
+	*/
+}
+
+function init(){
+	setFooterPosition();
+	window.addEventListener( 'resize', setFooterPosition, false);
+}
+
+
+init();

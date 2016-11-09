@@ -1,4 +1,4 @@
-<!--NOTE: The index will NOT be the entry point on the final site. The index is only used to check the functionality of visual elements, so please do not put in a lot of work in it.-->
+<!-- change url inside htaccess -->
 <!doctype html>
 <html>
 	<head>
@@ -8,7 +8,8 @@
 	</head>
 
 
-	<body>		
+	<body><div id="maindiv">	
+		
 		<div id="menu">
 			<center>
 				<form id="menuform" method="get" action="../php/test.php">
@@ -18,22 +19,36 @@
 					<div class="menuitem" id="events">		Events		</div>
 					<div class="menuitem" id="changeforx">	Change For X</div>
 					<div class="menuitem" id="contact">		Contact Us	</div>
+
 					<input id="formvalue" type="hidden" name="page" value="home">
 				</form>
-				<script src="../js/sendGetRequest.js"></script>
+
+				
 			</center>
 		</div>
 		<div id="header" style="background-image: url(../images/conference_1.jpg); background-size: cover; background-position: center center;">
 		</div>
-		<div id="body">
-			<h1>Body</h1>
+		<div id="contentbody">
 			<?php
+				if(empty($_GET['page'])){
+					?>
+					<script>
+						document.getElementById('menuform').submit();
+					</script>
+					<?php
+				}
 				include("contentreader.php");
-				readContent($_GET['page']);
+				if(strpos($_GET['page'],'.') !== 0 && strpos($_GET['page'],'/') !== 0){
+					readContent('../content/' . $_GET['page']);
+				}else{
+					echo 'nice try';
+				}
 			?>
 		</div>
+		<!--
 		<div id="footer">
-			<h1>Footer</h1>
 		</div>
-	</body>
+		-->
+		<script src="../js/sendGetRequest.js"></script>
+	</div></body>
 <html>
