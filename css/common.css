@@ -8,6 +8,7 @@ html, body{
 }
 
 
+
 .menuitem{
 	display: inline-block;
 	background-color:#728ca6;
@@ -24,10 +25,19 @@ html, body{
 	color:#ffffff;
 }
 
+.content{
+	margin:auto;
+	padding:15px;
+	max-width:966px;
+	background-color:#ffffff;
+	border-radius: 15px;
+}
+
 #maindiv{
 	margin: auto;
 	top:0px;	
 	padding:0px;
+	min-height:100vh;
 }
 
 #menu {
@@ -48,7 +58,7 @@ html, body{
 	margin: auto;
 	background-color:#4a6b8a;
 	top:0px;	
-	padding:0px;
+	padding:20px;
 	color:#012345;
 	padding-bottom:64px;
 }

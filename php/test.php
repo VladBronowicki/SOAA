@@ -39,16 +39,19 @@
 				}
 				include("contentreader.php");
 				if(strpos($_GET['page'],'.') !== 0 && strpos($_GET['page'],'/') !== 0){
-					readContent('../content/' . $_GET['page']);
+					
+						readContent('../content/' . $_GET['page']);
+					
 				}else{
 					echo 'nice try';
 				}
 			?>
+			<br/>
 		</div>
-		<!--
+
 		<div id="footer">
 		</div>
-		-->
+
 		<script src="../js/sendGetRequest.js"></script>
 	</div></body>
 <html>
