@@ -1,6 +1,25 @@
 <?php
-	function readContent($dir){
+	
+
+	function getDirectoryNames($dir){
+		if(file_exists($dir)){
+			$contentIterator = new FilesystemIterator($dir);
+			$directoryNames = array();
+			if($contentIterator->valid()){
+				foreach($contentIterator as $fileInfo){
+					array_push($directoryNames, $fileInfo->getFileName());
+				}//foreach
+			}//valid iterator
+			return $directoryNames;
+		}else{
+			return null;
+		}
+	}
+	function getFileNames($dir){
 		
+	}
+	
+	function readContent($dir){
 		$contentIterator = null;//new FilesystemIterator('../content/' . $dir);
 		if(file_exists('../content/' . $dir)){
 			$contentIterator = new FilesystemIterator($dir);
@@ -16,7 +35,7 @@
 							case "jpeg":
 							case "jpg":
 							case "png":
-								echo '<img src="' . $dir . '/' . $fileInfo->getFileName() . '" height = "50px" style="float:right;"/>';
+								echo '<span class="picture"><img src="' . $dir . '/' . $fileInfo->getFileName() . '" height = "50px" style="float:right;"/></span>';
 								break;
 							case "txt":
 								echo '<h1>';
@@ -32,14 +51,9 @@
 								 
 								break;
 							default:
-								echo 'ERROR: file extension incompatable!';
+								echo 'ERROR: incompatable file extension!<br/>Please Contact a System Administrator...';
 								break;
 						}
-
-
-						
-
-						
 					}else if($fileInfo->isDir()){
 						echo '<br>';
 						echo '<div class="content">';
