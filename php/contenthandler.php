@@ -11,11 +11,26 @@
 	<?php
 		include("head.php");
 		include("contentreader.php");
-		$maindir='../'
+		$maindir='../';
+		$contentdir = $maindir . 'content/';
+		
 	?>
 	<div id="contentbody">
 		<div class="content">
-			<?php echo var_dump($_POST);?>
+			<?php 
+			echo var_dump($_POST);
+			//preg_replace('/\s+/', '', $str);
+			$contentfile = preg_replace('/\s+/', '',$_POST['title']);
+			echo $contentfile;
+			$path_to_save = $contentdir . $_POST['contentdirectories'] . '/'. time() . '_' . $contentfile;
+			if (!mkdir($path_to_save, 0777)) {
+				die('Failed to create folders...');
+			}
+			$myfile = fopen($path_to_save."/".$contentfile.'.txt', "w") or die("Unable to open file!");
+			fwrite($myfile, '<h1>' . $_POST['title'] . '</h1>');
+			fwrite($myfile, '<p>' . $_POST['article'] . '</p>');
+			fclose($myfile);
+			?>
 		</div>
 	</div> 
 	<?php

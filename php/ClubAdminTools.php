@@ -28,7 +28,7 @@
 				</select>
 				<h4>Add Content</h4>
 				<input type='text' name='title' value='Title'/><br/>
-				<textarea name='article' rows='4' cols='40'>Add Text for your article here</textarea><br/>
+				<textarea name='article' rows='8' cols='80'>Add Text for your article here</textarea><br/>
 				<input type='file' name='uploadimage'/><br/>
 				<input type='submit'/>
 			</form>

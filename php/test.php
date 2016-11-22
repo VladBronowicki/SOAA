@@ -26,7 +26,8 @@
 				
 			</center>
 		</div>
-		<div id="header" style="background-image: url(../images/conference_1.jpg); background-size: cover; background-position: center center;">
+		<div id="header" style="background-image: url(../images/conference_1.jpg); 
+		background-size: cover; background-position: center center;">
 		</div>
 		<div id="contentbody">
 			<?php

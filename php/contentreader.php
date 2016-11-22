@@ -38,12 +38,6 @@
 								echo '<span class="picture"><img src="' . $dir . '/' . $fileInfo->getFileName() . '" height = "50px" style="float:right;"/></span>';
 								break;
 							case "txt":
-								echo '<h1>';
-								$title = preg_split('/(?=[A-Z])/',$title[0]);
-								for($i=0;$i < count($title); $i++){
-									echo $title[$i] . ' ';
-								}
-								echo '</h1>';
 								$lines = file($dir . '/' . $fileInfo->getFileName());
 								foreach($lines as $line){
 									echo $line . '<br/>';
